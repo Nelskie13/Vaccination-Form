@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vaccination Form</title>
+</head>
+<body>
+    <div class="Forms">
+        <h1>Vaccination Registration Form</h1>
+        <form name="vaccInfo" id="vacc-info-form">
+            <div class="form-container">
+                <div id="error-firstname" class="error"></div>
+                    <div>
+                        <label>First Name:</label> <!-- THIS IS FIRSTNAME FIELD -->
+                        <input type="text" name="firstname" id="firstnametxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-middlename" class="error"></div>
+                    <div>
+                        <label>Middle Name:</label> <!-- THIS IS MIDDLENAME FIELD -->
+                        <input type="text" name="middlename" id="middlenametxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-lastname" class="error"></div>
+                    <div>
+                        <label>Last Name:</label><!-- THIS IS LASTNAME FIELD -->
+                        <input type="text" name="lastname" id="lastnametxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-birthday" class="error"></div>
+                    <div>
+                        <label>Birthday:</label><!-- THIS IS BIRTHDAY FIELD SELECT -->
+                        <input type="date" name="birthday" id="birthdaytxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-email" class="error"></div>
+                    <div>
+                        <label>Email:</label><!-- THIS IS EMAIL FIELD -->
+                        <input type="email" name="email" id="emailtxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-region" class="error"></div>
+                <div>
+                    <label>Region:
+                        <select name="regionList" id="regiontxt"> <!-- THIS IS REGION FIELD SELECTION -->
+                            <option value="Select Region">-----Select Region-----</option>
+                            <option value="Region 1 - Ilocos Region">Region 1 - Ilocos Region</option>
+                            <option value="Region 2 - Cagayan Valley">Region 2 - Cagayan Valley</option>
+                            <option value="Region III - Central Luzon">Region III - Central Luzon</option>
+                            <option value="Region IV-A - CALABARZON">Region IV-A - CALABARZON</option>
+                            <option value="MIMAROPA Region">MIMAROPA Region</option>
+                            <option value="Region V - Bicol Region">Region V - Bicol Region</option>
+                            <option value="Region VI - Western Visayas">Region VI - Western Visayas</option>
+                            <option value="Region VII - Central Visayas">Region VII - Central Visayas</option>
+                            <option value="Region VIII - Eastern Visayas">Region VIII - Eastern Visayas</option>
+                            <option value="Region IX - Zamboanga Peninsula">Region IX - Zamboanga Peninsula</option>
+                            <option value="Region X - Northern Mindanao">Region X - Northern Mindanao</option>
+                            <option value="Region XI - Davao Region">Region XI - Davao Region</option>
+                            <option value="Region XII - SOCCSKSARGEN">Region XII - SOCCSKSARGEN</option>
+                            <option value="Region XIII - Caraga">Region XIII - Caraga</option>
+                            <option value="NCR - National Capital Region">NCR - National Capital Region</option>
+                            <option value="CAR - Cordillera Administrative Region">CAR - Cordillera Administrative Region</option>
+                            <option value="BARMM - Bangsamoro Autonomous Region in Muslim Mindanao">BARMM - Bangsamoro Autonomous Region in Muslim Mindanao</option>
+                        </select>
+                    </label>
+                </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-province" class="error"></div>
+                    <div>
+                        <label>Province:</label> <!-- THIS IS PROVINCE FIELD -->
+                        <input type="text" name="province" id="provincetxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-barangay" class="error"></div>
+                    <div>
+                        <label>Barangay:</label><!-- THIS IS BARANGAY FIELD -->
+                        <input type="text" name="barangay" id="barangaytxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-street" class="error"></div>
+                    <div>
+                        <label>Street:</label><!-- THIS IS STREET FIELD -->
+                        <input type="text" name="street" id="streettxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-gender" class="error"></div>
+                <div id="genderOpt"> Gender: <!-- THIS IS GENDER FIELD SELECTION -->
+                        <input type="radio" name="gender" value="Male" id="maleClk" onclick="clickMale()">Male
+                        <input type="radio" name="gender" value="Female" id="femaleClk" onclick="clickFemale()">Female
+                        <input type="radio" name="gender" value="Others" id="otherClk" onclick="clickOthers()">Others
+                </div>
+            </div><br>
+
+            <div class="form-container">
+                <div id="getOtherGender" style="display: none;" > 
+                <div>Others: <!-- THIS IS OTHER GENDER FIELD -->
+                        <input type="text" name="otherField" id="otherOption">
+                    </div>
+                </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-vaccinationBrand" class="error"></div>
+                <div>
+                    <label>Vaccination Brand (Dose 1):</label> <!-- THIS IS VACCINATION BRAND FIELD SELECTION -->
+                        <select name="vaccBrandList" id="brandlisttxt">
+                            <option value="Select Brand">----Select Brand----</option>
+                            <option value="Pfizer BioNTech">Pfizer BioNTech</option>
+                            <option value="Coronavac">Coronavac</option>
+                            <option value="Sputnik V">Sputnik V</option>
+                            <option value="Janssen">Janssen</option>
+                            <option value="Covaxin">Covaxin</option>
+                            <option value="Moderna">Moderna</option>
+                            <option value="Sinopharm">Sinopharm</option>
+                            <option value="Covovax">Covovax</option>
+                        </select>
+                </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-vaccinationDate" class="error"></div>
+                <div>
+                    <label>Vaccination Date (Dose 1):</label> <!-- THIS IS VACCINATION DATE FIELD -->
+                    <input type="date" name="vaccDate" id="vaccdatetxt">
+                </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-vaccinationSite" class="error"></div>
+                    <div>
+                        <label>Vaccination Site (Dose 1):</label> <!-- THIS IS VACCINATION SITE FIELD -->
+                        <input type="text" name="vaccSite" id="vaccsitetxt">
+                    </div>
+            </div> <br>
+
+            <div class="form-container">
+                <div id="error-ifSecVacc" class="error"></div>
+                    <div id="YesNo"> Did you already get your second vaccination?: <!-- THIS IS QUESTION FIELD  SELECTION-->
+                        <input type="radio" name="ifsecvacc" id="YesValue" value="Yes" onclick="clickYes()">Yes
+                        <input type="radio" name="ifsecvacc" id="NoValue" value="No" onclick="clickNo()">No
+                    </div>
+            </div> <br>
+
+            <div id="options" style="display: none;">
+                <div class="form-container">
+                    <div id="error-vaccinationBrand" class="error"></div>
+                    <div>
+                        <label>Vaccination Brand (Dose 2): <!-- THIS IS VACCINATION BRAND DOSE 2 FIELD SELECTION -->
+                            <select name="vaccBrandList2" id="vaccBrandDose2txt" >
+                                <option value="Select Brand">----Select Brand----</option>
+                                <option value="Pfizer BioNTech">Pfizer BioNTech</option>
+                                <option value="AstraZeneca">AstraZeneca</option>
+                                <option value="Coronavac">Coronavac</option>
+                                <option value="Sputnik V">Sputnik V</option>
+                                <option value="Janssen">Janssen</option>
+                                <option value="Covaxin">Covaxin</option>
+                                <option value="Moderna">Moderna</option>
+                                <option value="Sinopharm">Sinopharm</option>
+                                <option value="Covovax">Covovax</option>
+                            </select>
+                        </label>
+                    </div>
+                </div> <br>
+
+                <div class="form-container">
+                    <div id="error-vaccinationDate" class="error"></div>
+                    <div>
+                        <label>Vaccination Date (Dose 2):</label> <!-- THIS IS VACCINATION DATE DOSE 2 FIELD -->
+                        <input type="date" name="vaccDate2" id="vaccdate2txt">
+                    </div>
+                </div> <br>
+
+                <div class="form-container">
+                    <div id="error-vaccinationSite" class="error"></div>
+                    <div>
+                        <label>Vaccination Site (Dose 2):</label> <!-- THIS IS VACCINATION SITE DOSE 2 FIELD -->
+                        <input type="text" name="vaccSite2" id="vaccsite2txt">
+                    </div>
+                </div> <br>
+            </div>
+
+            <div class="form-container"> <!-- THIS IS SUBMIT/RESET SELECTION -->
+                <div  class="submit-reset">
+                    <button type="submit" name="submitBtn" onclick="submitInput()" id="submitBtn">Submit</button>
+                    <button type="reset" name="resetBtn" onclick="resetInput()" id="resetBtn">Reset</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="DisplayContainer" id="DisplayInputContainer"> <!-- THIS IS CONTAINER OF INPUT VALUE -->
+        <div id="content" style="display: none;">
+            <h2>Information Records</h2>
+            <div id="displayFullname" class="box"></div>
+            <div id="dateOfBirth" class="box"></div>
+            <div id="emailAddress" class="box"></div>
+            <div id="regionLoc" class="box"></div>
+            <div id="provinceLoc" class="box"></div>
+            <div id="barangayLoc" class="box"></div>
+            <div id="streetNames" class="box"></div>
+            <div id="gender" class="box"></div>
+            <div id="otherGender" class="box"></div>
+            <div id="vaccineDose1Brand" class="box"></div>
+            <div id="vaccineDose1Date" class="box"></div>
+            <div id="vaccineDose1Site" class="box"></div>
+            <div id="vaccinationsQA" class="box"></div>
+            <div id="vaccineDose2Brand" class="box"></div>
+            <div id="vaccineDose2Date" class="box"></div>
+            <div id="vaccineDose2Site" class="box"></div>
+        </div>
+    </div>
+    <script src="/script.js"></script> 
+</body>
+</html>
